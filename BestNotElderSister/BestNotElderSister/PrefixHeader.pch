@@ -1,0 +1,32 @@
+//
+//  PrefixHeader.pch
+//  BestNotElderSister
+//
+//  Created by ZhangCheng on 16/4/30.
+//  Copyright © 2016年 ZhangCheng. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+
+#import "UIView+ZCExtension.h"
+#import "UIBarButtonItem+ZCExtension.h"
+
+
+#ifdef DEBUG // 处于开发阶段
+#define ZCLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define ZCLog(...)
+#endif
+
+
+
+// RGB颜色
+#define ZCColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define ZCRandomColor HWColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+#endif
