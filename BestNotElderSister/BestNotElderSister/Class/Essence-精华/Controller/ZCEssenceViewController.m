@@ -8,11 +8,7 @@
 
 #import "ZCEssenceViewController.h"
 #import "ZCRecommendTagsViewController.h"
-#import "ZCAllTableViewController.h"
-#import "ZCVideoTableViewController.h"
-#import "ZCVoiceTableViewController.h"
-#import "ZCPictureTableViewController.h"
-#import "ZCWordTableViewController.h"
+#import "ZCTopicTableViewController.h"
 
 
 @interface ZCEssenceViewController () <UIScrollViewDelegate>
@@ -52,10 +48,11 @@
 - (void)setupTitileView
 {
     UIView *titleView = [[UIView alloc] init];
+    titleView.tag = -2;
     titleView.width = self.view.width;
-    titleView.height = 35;
+    titleView.height = ZCTitilesViewHeight;
     titleView.x = 0;
-    titleView.y = 64;
+    titleView.y = ZCTitilesViewY;
     titleView.backgroundColor = [[UIColor alloc] initWithRed:1 green:1 blue:1 alpha:0.8];
     [self.view addSubview:titleView];
     self.titleView = titleView;
@@ -63,23 +60,23 @@
     
     UIView *indicator = [[UIView alloc] init];
     indicator.backgroundColor = [UIColor redColor];
+    indicator.tag = -1;
     indicator.height = 3;
-    
     indicator.y = titleView.height - indicator.height;
     [titleView addSubview:indicator];
     self.indicator = indicator;
     
     
-    NSArray *titles = @[@"全部", @"视频", @"声音", @"图片", @"段子"];
-    CGFloat buttonWidth = titleView.width / titles.count;
-    for (int i = 0; i < titles.count; i ++) {
+    CGFloat buttonWidth = titleView.width / self.childViewControllers.count;
+    for (int i = 0; i < self.childViewControllers.count; i ++) {
         UIButton *button = [[UIButton alloc] init];
         button.tag = i;
         button.x = i * buttonWidth;
         button.y = 0;
         button.height = titleView.height;
         button.width = buttonWidth;
-        [button setTitle:titles[i] forState:UIControlStateNormal];
+        UIViewController *childViewCotroller = self.childViewControllers[i];
+        [button setTitle:childViewCotroller.title forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
 
@@ -117,20 +114,32 @@
 
 - (void)setupChildViewController
 {
-    ZCAllTableViewController *all = [[ZCAllTableViewController alloc] init];
+    
+    ZCTopicTableViewController *word = [[ZCTopicTableViewController alloc]  init];
+    word.type = ZCTopicTypeWord;
+    word.title = @"段子";
+    [self addChildViewController:word];
+    
+    ZCTopicTableViewController *all = [[ZCTopicTableViewController alloc] init];
+    all.type = ZCTopicTypeAll;
+    all.title = @"全部";
     [self addChildViewController:all];
     
-    ZCVideoTableViewController *video = [[ZCVideoTableViewController alloc] init];
+    ZCTopicTableViewController *video = [[ZCTopicTableViewController alloc] init];
+    video.type = ZCTopicTypeVideo;
+    video.title = @"视频";
     [self addChildViewController:video];
     
-    ZCVoiceTableViewController *voice = [[ZCVoiceTableViewController alloc] init];
+    ZCTopicTableViewController *voice = [[ZCTopicTableViewController alloc] init];
+    voice.type = ZCTopicTypeVoice;
+    voice.title = @"声音";
     [self addChildViewController:voice];
     
-    ZCPictureTableViewController *picture = [[ZCPictureTableViewController alloc] init];
+    ZCTopicTableViewController *picture = [[ZCTopicTableViewController alloc] init];
+    picture.type = ZCTopicTypePicture;
+    picture.title = @"图片";
     [self addChildViewController:picture];
-    
-    ZCWordTableViewController *word = [[ZCWordTableViewController alloc]  init];
-    [self addChildViewController:word];
+
                                    
                                    
 }
@@ -143,11 +152,11 @@
     button.enabled = NO;
     self.selectedTitle = button;
     
+
     [UIView animateWithDuration:0.25 animations:^{
         self.indicator.width = button.titleLabel.width;
         self.indicator.centerX = button.centerX;
     }];
-    
     //切换控制器
     CGPoint offset = self.contentView.contentOffset;
     offset.x = button.tag * self.contentView.width;
@@ -165,24 +174,18 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-    
-    
-    
-    NSInteger index = scrollView.contentOffset.x / scrollView.width;
-    UITableViewController *childVieController = self.childViewControllers[index];
-    childVieController.view.x = scrollView.contentOffset.x;
-    childVieController.view.y = 0;
-    childVieController.view.height = scrollView.height;
-    
-    CGFloat top = CGRectGetMaxY(self.titleView.frame);
-    CGFloat bottom = self.tabBarController.tabBar.height;
-    childVieController.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
-    
-    [scrollView addSubview:childVieController.view];
-    
 
     
     
+    NSInteger index = scrollView.contentOffset.x / scrollView.width;
+    UIViewController *childVieController = self.childViewControllers[index];
+    childVieController.view.x = scrollView.contentOffset.x;
+    childVieController.view.y = 0;
+    childVieController.view.height = scrollView.height;
+
+    [scrollView addSubview:childVieController.view];
+    
+
     
 }
 
@@ -191,5 +194,8 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     [self scrollViewDidEndScrollingAnimation:scrollView];
+    NSInteger tag = scrollView.contentOffset.x / scrollView.width;
+    [self clickTitle:[self.titleView viewWithTag:tag]];
+    
 }
 @end

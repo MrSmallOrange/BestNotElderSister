@@ -78,6 +78,7 @@
     ZCRecommendTagCell *cell = [tableView dequeueReusableCellWithIdentifier:ZCRecommendTagID];
     cell.recommendTag = self.recommendTags[indexPath.row];
     
+    
     return cell;
 }
 
