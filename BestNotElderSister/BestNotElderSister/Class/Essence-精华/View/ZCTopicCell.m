@@ -28,14 +28,6 @@
 - (IBAction)follow:(id)sender {
     ZCLog(@"follow");
 }
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    if (self = [super initWithFrame:frame]) {
-        
-    }
-    
-    return self;
-}
 
 - (void)awakeFromNib
 {
@@ -70,8 +62,8 @@
 - (void)setFrame:(CGRect)frame
 {
     frame.origin.x = ZCTopicCellMargin;
-    frame.size.width -= 2 * frame.origin.x;
-    frame.origin.y += ZCTopicCellMargin;
+    frame.size.width -= 2 * ZCTopicCellMargin;
+//    frame.origin.y += ZCTopicCellMargin;
     frame.size.height -= ZCTopicCellMargin ;
     
     [super setFrame:frame];

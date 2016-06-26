@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3750054C1CDE0E1B005547E1 /* ZCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750054B1CDE0E1B005547E1 /* ZCTextField.m */; };
 		3762E62B1CDB660F00367F92 /* ZCVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3762E62A1CDB660F00367F92 /* ZCVerticalButton.m */; };
+		3764918D1CE8420E005B7E8B /* ZCTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3764918C1CE8420E005B7E8B /* ZCTopicPictureView.m */; };
 		376A527C1CD591B200EE0E58 /* ZCRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376A527A1CD591B200EE0E58 /* ZCRecommendViewController.m */; };
 		376BB8F11CE6189600FC9B95 /* ZCTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 376BB8F01CE6189600FC9B95 /* ZCTopicCell.m */; };
 		376BB8F51CE61D7C00FC9B95 /* ZCTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 376BB8F41CE61D7C00FC9B95 /* ZCTopicCell.xib */; };
@@ -71,6 +72,8 @@
 		3750054B1CDE0E1B005547E1 /* ZCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTextField.m; sourceTree = "<group>"; };
 		3762E6291CDB660F00367F92 /* ZCVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCVerticalButton.h; sourceTree = "<group>"; };
 		3762E62A1CDB660F00367F92 /* ZCVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCVerticalButton.m; sourceTree = "<group>"; };
+		3764918B1CE8420E005B7E8B /* ZCTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTopicPictureView.h; sourceTree = "<group>"; };
+		3764918C1CE8420E005B7E8B /* ZCTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTopicPictureView.m; sourceTree = "<group>"; };
 		376A52791CD591B200EE0E58 /* ZCRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCRecommendViewController.h; sourceTree = "<group>"; };
 		376A527A1CD591B200EE0E58 /* ZCRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCRecommendViewController.m; sourceTree = "<group>"; };
 		376BB8EF1CE6189600FC9B95 /* ZCTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTopicCell.h; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 				376BB8EF1CE6189600FC9B95 /* ZCTopicCell.h */,
 				376BB8F01CE6189600FC9B95 /* ZCTopicCell.m */,
 				376BB8F41CE61D7C00FC9B95 /* ZCTopicCell.xib */,
+				3764918B1CE8420E005B7E8B /* ZCTopicPictureView.h */,
+				3764918C1CE8420E005B7E8B /* ZCTopicPictureView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -678,6 +683,7 @@
 				37F0588F1CD4E4DE007314CB /* ZCEssenceViewController.m in Sources */,
 				376EFCEF1CDEED1500965266 /* ZCPushGuideView.m in Sources */,
 				37F058941CD4E4DE007314CB /* UIBarButtonItem+ZCExtension.m in Sources */,
+				3764918D1CE8420E005B7E8B /* ZCTopicPictureView.m in Sources */,
 				37F058931CD4E4DE007314CB /* AppDelegate.m in Sources */,
 				37A866681CE5CECA0055BB16 /* ZCConst.m in Sources */,
 				37F412BA1CD5A0EA00D1189D /* ZCRecommendCategory.m in Sources */,

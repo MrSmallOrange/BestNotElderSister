@@ -28,6 +28,24 @@
 /** 是否为新浪会员*/
 @property (nonatomic, assign, getter=isSina_v) BOOL sina_v;
 
+/** cell高度*/
+@property (nonatomic, assign, readonly) CGFloat cellHeight;
+/** 图片宽度*/
+@property (nonatomic, assign) CGFloat width;
+/** 图片高度*/
+@property (nonatomic, assign) CGFloat height;
+/** 图片URL*/
+@property (nonatomic, copy) NSString *smallImage;
+/** 图片URL*/
+@property (nonatomic, copy) NSString *middleImage;
+/** 图片URL*/
+@property (nonatomic, copy) NSString *largeImage;
+/** 帖子类型*/
+@property (nonatomic, assign) ZCTopicType type;
+
+
+
+
 
 
 

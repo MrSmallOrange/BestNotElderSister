@@ -51,11 +51,13 @@
     
     CGFloat top =  ZCTitilesViewHeight + ZCTitilesViewY;
     CGFloat bottom = self.tabBarController.tabBar.height;
-    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
-    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(top, 0, bottom, 0);
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.contentInset = UIEdgeInsetsMake(top + ZCTopicCellMargin, 0, bottom, 0);
+    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(top + ZCTopicCellMargin, 0, bottom, 0);
+    
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZCTopicCell class]) bundle:nil] forCellReuseIdentifier:ZCTopicCellID];
+    
 }
 
 #pragma mark - 刷新控件
@@ -180,14 +182,8 @@
     ZCTopic *topic = self.topics[indexPath.row];
     
     
-    //文字的Y
 
-    CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 4 * ZCTopicCellMargin, MAXFLOAT);
-//    CGFloat textH = [topic.text sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:maxSize].height;
-    
-    CGFloat textH = [topic.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size.height;
-    CGFloat cellH = ZCTopicCellTextY  + textH + ZCTopicCellBottomBarHeight + 2 * ZCTopicCellMargin;
-    return cellH;
+    return topic.cellHeight;
 }
 
 @end

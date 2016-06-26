@@ -28,7 +28,6 @@
    
     [self setupNavigation];
     [self setupChildViewController];
-
     [self setupTitileView];
     [self setupContentView];
     
@@ -57,7 +56,7 @@
     [self.view addSubview:titleView];
     self.titleView = titleView;
     
-    
+
     UIView *indicator = [[UIView alloc] init];
     indicator.backgroundColor = [UIColor redColor];
     indicator.tag = -1;
@@ -174,9 +173,6 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-
-    
-    
     NSInteger index = scrollView.contentOffset.x / scrollView.width;
     UIViewController *childVieController = self.childViewControllers[index];
     childVieController.view.x = scrollView.contentOffset.x;
@@ -184,8 +180,6 @@
     childVieController.view.height = scrollView.height;
 
     [scrollView addSubview:childVieController.view];
-    
-
     
 }
 
