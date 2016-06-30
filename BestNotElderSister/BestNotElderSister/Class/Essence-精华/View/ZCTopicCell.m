@@ -9,7 +9,7 @@
 #import "ZCTopicCell.h"
 #import "UIImageView+WebCache.h"
 #import "ZCTopic.h"
-
+#import "ZCTopicPictureView.h"
 @interface ZCTopicCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *caiButton;
 @property (weak, nonatomic) IBOutlet UIImageView *sina_v;
 @property (weak, nonatomic) IBOutlet UILabel *contentTextLabel;
+@property (weak, nonatomic) ZCTopicPictureView *pictureView;
+@property (weak, nonatomic) IBOutlet UIView *tabBar;
+
 
 @end
 
@@ -29,8 +32,24 @@
     ZCLog(@"follow");
 }
 
+
+
+- (ZCTopicPictureView *)pictureView
+{
+    if (_pictureView == nil) {
+        ZCTopicPictureView *pic = [[ZCTopicPictureView alloc] init];
+        _pictureView = pic ;
+        [self.contentView addSubview:pic];
+    }
+    
+    return  _pictureView;
+}
+
 - (void)awakeFromNib
 {
+    
+    self.autoresizingMask = UIViewAutoresizingNone;
+    
     UIImageView *imageView = [[UIImageView alloc] init];
     imageView.image = [UIImage imageNamed:@"mainCellBackground"];
     imageView.layer.masksToBounds = YES;
@@ -45,10 +64,7 @@
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLabel.text = topic.screen_name;
     
-
-
     self.sina_v.hidden = !topic.isSina_v;
-    
     
     self.createTimeLabel.text = topic.created_at;
     [self setButton:self.dingButton titleWithNumber:topic.ding placeholder:@"顶"];
@@ -56,7 +72,15 @@
     [self setButton:self.shareButton titleWithNumber:topic.repost placeholder:@"分享"];
     [self setButton:self.commentButton titleWithNumber:topic.comment placeholder:@"评论"];
     
+    
+    
     self.contentTextLabel.text = topic.text;
+    
+    
+    if (topic.type == ZCTopicTypePicture) {
+        self.pictureView.topic = topic;
+        self.pictureView.frame = topic.pictureViewFrame;
+    }
 }
 //设置cell的间隔
 - (void)setFrame:(CGRect)frame
