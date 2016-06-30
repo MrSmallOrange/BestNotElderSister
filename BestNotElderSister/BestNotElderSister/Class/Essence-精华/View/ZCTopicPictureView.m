@@ -21,11 +21,11 @@
 @implementation ZCTopicPictureView
 
 
-//- (void)awakeFromNib
-//{
-//    [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.topic.middle_image]];
-//    
-//}
+- (void)awakeFromNib
+{
+ 
+    self.autoresizingMask = UIViewAutoresizingNone;
+}
 
 
 + (instancetype)topicPictureView
@@ -38,7 +38,7 @@
     _topic = topic;
     
 
-    self.imageView.backgroundColor = [UIColor redColor];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.topic.middle_image]];
     
     
 

@@ -75,11 +75,10 @@
         if (self.type == ZCTopicTypePicture) {
             
 
-            
             CGFloat imagewidth =  maxSize.width;
             CGFloat imageHeight = (self.pictureHeight / self.pictureWidth ) * imagewidth ;
             
-            _cellHeight += imageHeight;
+            _cellHeight += imageHeight + ZCTopicCellMargin;
             
             //计算图片空间的Frame
             CGFloat pictureX = ZCTopicCellMargin;

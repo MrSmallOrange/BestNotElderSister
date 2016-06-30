@@ -37,7 +37,7 @@
 - (ZCTopicPictureView *)pictureView
 {
     if (_pictureView == nil) {
-        ZCTopicPictureView *pic = [[ZCTopicPictureView alloc] init];
+        ZCTopicPictureView *pic = [ZCTopicPictureView topicPictureView];
         _pictureView = pic ;
         [self.contentView addSubview:pic];
     }
