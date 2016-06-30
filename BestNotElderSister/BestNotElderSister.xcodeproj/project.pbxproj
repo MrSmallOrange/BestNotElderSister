@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3750054C1CDE0E1B005547E1 /* ZCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3750054B1CDE0E1B005547E1 /* ZCTextField.m */; };
 		3762E62B1CDB660F00367F92 /* ZCVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3762E62A1CDB660F00367F92 /* ZCVerticalButton.m */; };
-		3764918D1CE8420E005B7E8B /* ZCTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3764918C1CE8420E005B7E8B /* ZCTopicPictureView.m */; };
 		376A527C1CD591B200EE0E58 /* ZCRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376A527A1CD591B200EE0E58 /* ZCRecommendViewController.m */; };
 		376BB8F11CE6189600FC9B95 /* ZCTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 376BB8F01CE6189600FC9B95 /* ZCTopicCell.m */; };
 		376BB8F51CE61D7C00FC9B95 /* ZCTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 376BB8F41CE61D7C00FC9B95 /* ZCTopicCell.xib */; };
@@ -48,6 +47,8 @@
 		37F412C81CD5AD4700D1189D /* ZCRecommendCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F412C61CD5AD4700D1189D /* ZCRecommendCategoryCell.m */; };
 		37F412C91CD5AD4700D1189D /* ZCRecommendCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F412C71CD5AD4700D1189D /* ZCRecommendCategoryCell.xib */; };
 		5C6B6E1BB2521DD2C6734A9E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9086B931F707781E8779EE /* libPods.a */; };
+		A253CA581D251B7E00309CEA /* ZCTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = A253CA571D251B7E00309CEA /* ZCTopicPictureView.m */; };
+		A253CA5A1D251BA800309CEA /* ZCTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A253CA591D251BA800309CEA /* ZCTopicPictureView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +73,6 @@
 		3750054B1CDE0E1B005547E1 /* ZCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTextField.m; sourceTree = "<group>"; };
 		3762E6291CDB660F00367F92 /* ZCVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCVerticalButton.h; sourceTree = "<group>"; };
 		3762E62A1CDB660F00367F92 /* ZCVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCVerticalButton.m; sourceTree = "<group>"; };
-		3764918B1CE8420E005B7E8B /* ZCTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTopicPictureView.h; sourceTree = "<group>"; };
-		3764918C1CE8420E005B7E8B /* ZCTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTopicPictureView.m; sourceTree = "<group>"; };
 		376A52791CD591B200EE0E58 /* ZCRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCRecommendViewController.h; sourceTree = "<group>"; };
 		376A527A1CD591B200EE0E58 /* ZCRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCRecommendViewController.m; sourceTree = "<group>"; };
 		376BB8EF1CE6189600FC9B95 /* ZCTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTopicCell.h; sourceTree = "<group>"; };
@@ -146,6 +145,9 @@
 		4B8F97AF826FD986D4ECBE1F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6C9086B931F707781E8779EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D75E5AA8242A5B8F9386BE3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A253CA561D251B7E00309CEA /* ZCTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTopicPictureView.h; sourceTree = "<group>"; };
+		A253CA571D251B7E00309CEA /* ZCTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTopicPictureView.m; sourceTree = "<group>"; };
+		A253CA591D251BA800309CEA /* ZCTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCTopicPictureView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,8 +300,9 @@
 				376BB8EF1CE6189600FC9B95 /* ZCTopicCell.h */,
 				376BB8F01CE6189600FC9B95 /* ZCTopicCell.m */,
 				376BB8F41CE61D7C00FC9B95 /* ZCTopicCell.xib */,
-				3764918B1CE8420E005B7E8B /* ZCTopicPictureView.h */,
-				3764918C1CE8420E005B7E8B /* ZCTopicPictureView.m */,
+				A253CA561D251B7E00309CEA /* ZCTopicPictureView.h */,
+				A253CA571D251B7E00309CEA /* ZCTopicPictureView.m */,
+				A253CA591D251BA800309CEA /* ZCTopicPictureView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				TargetAttributes = {
 					37F058181CD4A012007314CB = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = VPUA2BXZ96;
 					};
 					37F058311CD4A013007314CB = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -591,6 +595,7 @@
 			files = (
 				37919CFB1CD5D91B007E8A16 /* ZCRecommendUserCell.xib in Resources */,
 				37F412C41CD5AB9E00D1189D /* ZCRecommendViewController.xib in Resources */,
+				A253CA5A1D251BA800309CEA /* ZCTopicPictureView.xib in Resources */,
 				376EFCF11CDEED2300965266 /* ZCPushGuideView.xib in Resources */,
 				37CEF7A51CDAE49D00AE2B57 /* ZCRecommendTagCell.xib in Resources */,
 				376BB8F51CE61D7C00FC9B95 /* ZCTopicCell.xib in Resources */,
@@ -683,7 +688,7 @@
 				37F0588F1CD4E4DE007314CB /* ZCEssenceViewController.m in Sources */,
 				376EFCEF1CDEED1500965266 /* ZCPushGuideView.m in Sources */,
 				37F058941CD4E4DE007314CB /* UIBarButtonItem+ZCExtension.m in Sources */,
-				3764918D1CE8420E005B7E8B /* ZCTopicPictureView.m in Sources */,
+				A253CA581D251B7E00309CEA /* ZCTopicPictureView.m in Sources */,
 				37F058931CD4E4DE007314CB /* AppDelegate.m in Sources */,
 				37A866681CE5CECA0055BB16 /* ZCConst.m in Sources */,
 				37F412BA1CD5A0EA00D1189D /* ZCRecommendCategory.m in Sources */,
@@ -820,6 +825,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BestNotElderSister/PrefixHeader.pch;
 				INFOPLIST_FILE = BestNotElderSister/Info.plist;
@@ -828,6 +835,7 @@
 				New_Setting = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ZhangCheng.BestNotElderSister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
@@ -838,6 +846,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BestNotElderSister/PrefixHeader.pch;
 				INFOPLIST_FILE = BestNotElderSister/Info.plist;
@@ -846,6 +856,7 @@
 				New_Setting = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ZhangCheng.BestNotElderSister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;

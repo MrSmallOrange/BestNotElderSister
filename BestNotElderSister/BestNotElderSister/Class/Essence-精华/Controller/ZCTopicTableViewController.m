@@ -167,9 +167,7 @@
 {
     
     ZCTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:ZCTopicCellID];
-    //    UIView *selectedBackgroundView = [[UIView alloc] init];
-    //    selectedBackgroundView.backgroundColor = [UIColor redColor];
-    //    cell.selectedBackgroundView = selectedBackgroundView;
+
     cell.topic = self.topics[indexPath.row];
     
     

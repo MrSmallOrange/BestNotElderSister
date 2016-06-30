@@ -34,16 +34,22 @@
 @property (nonatomic, assign) CGFloat width;
 /** 图片高度*/
 @property (nonatomic, assign) CGFloat height;
-/** 图片URL*/
-@property (nonatomic, copy) NSString *smallImage;
-/** 图片URL*/
-@property (nonatomic, copy) NSString *middleImage;
-/** 图片URL*/
-@property (nonatomic, copy) NSString *largeImage;
 /** 帖子类型*/
 @property (nonatomic, assign) ZCTopicType type;
 
+/** 图片高度*/
+@property (nonatomic, assign) CGFloat pictureHeight;
+/** 图片宽度*/
+@property (nonatomic, assign) CGFloat pictureWidth;
 
+/** 小图片URL*/
+@property (nonatomic, copy) NSString *small_image;
+/** 中图片URL*/
+@property (nonatomic, copy) NSString *middle_image;
+/** 大图片URL*/
+@property (nonatomic, copy) NSString *large_image;
+/** 图片空间的frame*/
+@property (nonatomic, assign, readonly) CGRect pictureViewFrame;
 
 
 

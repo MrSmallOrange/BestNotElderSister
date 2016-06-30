@@ -114,15 +114,17 @@
 - (void)setupChildViewController
 {
     
+    ZCTopicTableViewController *all = [[ZCTopicTableViewController alloc] init];
+    all.type = ZCTopicTypeAll;
+    all.title = @"全部";
+    [self addChildViewController:all];
+    
     ZCTopicTableViewController *word = [[ZCTopicTableViewController alloc]  init];
     word.type = ZCTopicTypeWord;
     word.title = @"段子";
     [self addChildViewController:word];
     
-    ZCTopicTableViewController *all = [[ZCTopicTableViewController alloc] init];
-    all.type = ZCTopicTypeAll;
-    all.title = @"全部";
-    [self addChildViewController:all];
+
     
     ZCTopicTableViewController *video = [[ZCTopicTableViewController alloc] init];
     video.type = ZCTopicTypeVideo;

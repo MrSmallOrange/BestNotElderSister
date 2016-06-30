@@ -12,14 +12,17 @@
 @implementation ZCTopic
 {
     CGFloat _cellHeight;
+    CGRect _pictureViewFrame;
 }
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName
 {
     return @{
-             @"smallImage":@"image0",
-             @"largeImage":@"image1",
-             @"middleImage":@"image2"
+             @"small_image":@"image0",
+             @"large_Image":@"image1",
+             @"middle_image":@"image2",
+             @"pictureWidth": @"width",
+             @"pictureHeight":@"height"
              
              };
 }
@@ -66,10 +69,25 @@
         CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 4 * ZCTopicCellMargin, MAXFLOAT);
         
         CGFloat textH = [_text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size.height;
-        _cellHeight = ZCTopicCellTextY + textH + ZCTopicCellBottomBarHeight + 2 * ZCTopicCellMargin;
+        _cellHeight = ZCTopicCellTextY + textH + ZCTopicCellBottomBarHeight + 2 * ZCTopicCellMargin ;
+        
         
         if (self.type == ZCTopicTypePicture) {
-            _cellHeight += self.height;
+            
+
+            
+            CGFloat imagewidth =  maxSize.width;
+            CGFloat imageHeight = (self.pictureHeight / self.pictureWidth ) * imagewidth ;
+            
+            _cellHeight += imageHeight;
+            
+            //计算图片空间的Frame
+            CGFloat pictureX = ZCTopicCellMargin;
+            CGFloat pictureY = ZCTopicCellTextY + textH + ZCTopicCellMargin;
+            _pictureViewFrame = CGRectMake(pictureX, pictureY, imagewidth, imageHeight);
+            
+            
+            	
         }
     }
 
