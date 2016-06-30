@@ -45,8 +45,6 @@
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLabel.text = topic.screen_name;
     
-
-
     self.sina_v.hidden = !topic.isSina_v;
     
     
